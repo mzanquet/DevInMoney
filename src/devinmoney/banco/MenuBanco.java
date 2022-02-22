@@ -1,3 +1,5 @@
+// mÃ©todo adicionaSaldoPoupanca elaborado com base @author loiane <https://github.com/loiane/curso-java-basico/blob/master/eclipse/curso-java-basico/src/com/loiane/cursojava/aula43/labs/exer01/Teste.java>
+// mÃ©todo operacoesMenuPrincipal elaborado com base
 package devinmoney.banco;
 
 import java.time.LocalDate;
@@ -26,12 +28,12 @@ public class MenuBanco {
 		System.out.println("------------------------------------------------------------------------------");
 		System.out.println("----------------------------- SISTEMA BANCO ----------------------------------");
 		System.out.println("------------------------------------------------------------------------------");
-		System.out.println("************ Digite um número para acessar a operação desejada ***************");
+		System.out.println("************ Digite um nÃºmero para acessar a operaÃ§Ã£o desejada ***************");
 		System.out.println("------------------------------------------------------------------------------");
 		System.out.println("       1. Abrir conta          ");
-		System.out.println("       2. Depósito             ");
+		System.out.println("       2. DepÃ³sito             ");
 		System.out.println("       3. Saque                ");
-		System.out.println("       4. Transferência        ");
+		System.out.println("       4. TransferÃªncia        ");
 		System.out.println("       5. Lista de contas      ");
 		System.out.println("       6. Extrato              ");
 		System.out.println("       7. Sair                 ");
@@ -58,11 +60,11 @@ public class MenuBanco {
 			adicionaExtrato();
 			break;	
 		case 7:
-			System.out.println("Até breve!");
+			System.out.println("AtÃ© breve!");
 			System.exit(0);
 			
 		default:
-			System.out.println("Opção inválida!");
+			System.out.println("OpÃ§Ã£o invÃ¡lida!");
 			operacoesMenuPrinciapal();
 			break;
 		}
@@ -72,12 +74,12 @@ public class MenuBanco {
 	public static int menuConta(Scanner teclado) {
 		System.out.println("Selecione um tipo de conta: ");
 		System.out.println("1. Conta corrente");
-		System.out.println("2. Conta poupança");
+		System.out.println("2. Conta poupanÃ§a");
 		System.out.println("3. Conta investimento");
 		
 		int opcao;
 		do {
-			System.out.println("Digite um número da lista para selecionar desejada");
+			System.out.println("Digite um nÃºmero da lista para selecionar desejada");
 			opcao = teclado.nextInt();
 		} while (opcao < 1 || opcao > 3);
 		return opcao;
@@ -95,7 +97,7 @@ public class MenuBanco {
 			String cpf = teclado.next();		
 			System.out.println(" Renda Mensal: ");
 			double rendaMensal = teclado.nextDouble();		
-			System.out.println(" Número da agencia: ");
+			System.out.println(" NÃºmero da agencia: ");
 			String numeroAgencia = teclado.next();			
 			System.out.println(" Saldo inicial: ");
 			double saldo = teclado.nextDouble();			
@@ -111,17 +113,17 @@ public class MenuBanco {
 			String cpf = teclado.next();		
 			System.out.println(" Renda Mensal: ");
 			double rendaMensal = teclado.nextDouble();			
-			System.out.println(" Número da agencia: ");
+			System.out.println(" NÃºmero da agencia: ");
 			String numeroAgencia = teclado.next();
-			System.out.println(" Digite a quantidade de meses para simular o rendimento da aplicação:");
+			System.out.println(" Digite a quantidade de meses para simular o rendimento da aplicaÃ§Ã£o:");
 			int mesRendimento = teclado.nextInt();
 			System.out.println(" Digite o valor que deseja simular: ");
 	        double valorSimulado = teclado.nextDouble();
 	        int valorSimuladoInt;
 	        valorSimuladoInt = (int)mesRendimento;
 			double calculoRendimento = (valorSimulado * ((1 + (1/100))^mesRendimento));
-			System.out.println(" O montante da poupança no período simulado é: " + calculoRendimento);
-			System.out.println(" Digite o valor novamente para guardar o valor na poupança: ");
+			System.out.println(" O montante da poupanÃ§a no perÃ­odo simulado Ã©: " + calculoRendimento);
+			System.out.println(" Digite o valor novamente para guardar o valor na poupanÃ§a: ");
 			double saldo = teclado.nextDouble();
 			conta = new ContaPoupanca(nome, cpf, rendaMensal, numeroAgencia, saldo);
 			
@@ -136,18 +138,18 @@ public class MenuBanco {
 			String cpf = teclado.next();		
 			System.out.println(" Renda Mensal: ");
 			double rendaMensal = teclado.nextDouble();
-			System.out.println(" Número da agencia: ");
+			System.out.println(" NÃºmero da agencia: ");
 			String numeroAgencia = teclado.next();
 			System.out.println(" Tipo de investimento");
 			String investimento = teclado.next();
-			System.out.println(" Digite a quantidade de anos para simular o rendimento da aplicação:");
+			System.out.println(" Digite a quantidade de anos para simular o rendimento da aplicaÃ§Ã£o:");
 			int anoRendimento = teclado.nextInt();
 			System.out.println(" Digite o valor que deseja simular: ");
 	        double valorSimulado = teclado.nextDouble();
 	        int valorSimuladoInt;
 	        valorSimuladoInt = (int) anoRendimento;
 			double calculoRendimento = (valorSimulado * ((1 + (1/5))^anoRendimento));
-			System.out.println(" O montante do valor do investimento no período simulado é: " + calculoRendimento);
+			System.out.println(" O montante do valor do investimento no perÃ­odo simulado Ã©: " + calculoRendimento);
 			System.out.println(" Digite o valor novamente para confirmar o investimento: ");
 			double saldo = teclado.nextDouble();
 			conta = new ContaInvestimento(nome, cpf, rendaMensal, numeroAgencia, saldo);
@@ -182,22 +184,22 @@ public class MenuBanco {
 	}
 	
 	public static void adicionaDeposito() {
-        System.out.print("\nPor favor, digite o número da conta origem: ");
+        System.out.print("\nPor favor, digite o nÃºmero da conta origem: ");
         int numeroConta = teclado.nextInt();
-        System.out.print("\nPor favor, digite o número da conta destino: ");
+        System.out.print("\nPor favor, digite o nÃºmero da conta destino: ");
         int numeroContaDestino = teclado.nextInt();
         
         Conta conta = buscaConta(numeroConta);
         
         if (conta != null) {
-        	System.out.println("Digite o valor do depósito: ");
+        	System.out.println("Digite o valor do depÃ³sito: ");
         	double valor = teclado.nextDouble();
         	conta.adicionaDeposito(valor);
         	System.out.println("Valor depositado com sucesso!");
     		Transacao transacao = new Transacao(numeroConta, numeroContaDestino, valor, LocalDate.now());
             transacoes.add(transacao);
         } else {
-        	System.out.println("Conta não existe!");
+        	System.out.println("Conta nÃ£o existe!");
         }
         operacoesMenuPrinciapal();
 		
@@ -205,9 +207,9 @@ public class MenuBanco {
 	
 	
 	public static void adicionaSaque() {
-        System.out.print("\nPor favor, digite o número da conta origem: ");
+        System.out.print("\nPor favor, digite o nÃºmero da conta origem: ");
         int numeroConta = teclado.nextInt();
-        System.out.print("\nPor favor, digite o número da conta destino: ");
+        System.out.print("\nPor favor, digite o nÃºmero da conta destino: ");
         int numeroContaDestino = teclado.nextInt();
         
         Conta conta = buscaConta(numeroConta);
@@ -220,7 +222,7 @@ public class MenuBanco {
     		Transacao transacao = new Transacao(numeroConta, numeroContaDestino, valor, LocalDate.now());
             transacoes.add(transacao);
         } else {
-        	System.out.println("Conta não existe!");
+        	System.out.println("Conta nÃ£o existe!");
         }
         operacoesMenuPrinciapal();
 		
@@ -229,19 +231,19 @@ public class MenuBanco {
 
 	
 	public static void adicionaTransferencia() {
-        System.out.print("\nPor favor, digite o número da conta origem: ");
+        System.out.print("\nPor favor, digite o nÃºmero da conta origem: ");
         int numeroContaOrigem = teclado.nextInt();
         
         Conta contaOrigem = buscaConta(numeroContaOrigem);
         
         if (contaOrigem != null) {
-        	System.out.println("Número da conta destino: ");
+        	System.out.println("NÃºmero da conta destino: ");
         	int numeroContaDestino = teclado.nextInt();
         	
         	Conta contaDestino = buscaConta(numeroContaDestino);
         	
         	if (contaDestino != null) {
-        		System.out.println("Valor da transferência: ");
+        		System.out.println("Valor da transferÃªncia: ");
         		double valor = teclado.nextDouble();
         		
         		contaDestino.adicionaTransferencia(contaDestino, valor);
@@ -258,7 +260,7 @@ public class MenuBanco {
 				System.out.println(conta);
 			}
 		} else {
-			System.out.println("Conta não existe!");
+			System.out.println("Conta nÃ£o existe!");
 		}
 		operacoesMenuPrinciapal();
 		
@@ -270,7 +272,7 @@ public class MenuBanco {
 				System.out.println(transacao);
 			}
 		} else {
-			System.out.println("Nenhuma transação efetuada!");
+			System.out.println("Nenhuma transaÃ§Ã£o efetuada!");
 		}
 		operacoesMenuPrinciapal();
 		
@@ -279,9 +281,9 @@ public class MenuBanco {
 	
 	public void atualizaSaldoPoupanca(Conta conta) {
 		if (((ContaPoupanca) conta).calculaNovoSaldo(0.022)) {
-			System.out.println("Rendimento aplicado, novo saldo é de = " + conta.getSaldo());
+			System.out.println("Rendimento aplicado, novo saldo Ã© de = " + conta.getSaldo());
 		} else {
-			System.out.println("Hoje não é dia de rendimento, saldo não atualizado.");
+			System.out.println("Hoje nÃ£o Ã© dia de rendimento, saldo nÃ£o atualizado.");
 		}
 	}
 	
@@ -292,24 +294,24 @@ public class MenuBanco {
 	
 	case FUNDO_IMOBILIARIO:
 		if (((ContaInvestimento) conta).calculaNovoSaldo(0.10)) {
-			System.out.println("Rendimento aplicado, novo saldo é de = " + ((ContaInvestimento) conta).getSaldo());
+			System.out.println("Rendimento aplicado, novo saldo Ã© de = " + ((ContaInvestimento) conta).getSaldo());
 		} else {
-			System.out.println("Hoje não é dia de rendimento, saldo não atualizado.");
+			System.out.println("Hoje nÃ£o Ã© dia de rendimento, saldo nÃ£o atualizado.");
 		}
 		break;
 		
 	case ACOES:
 		if (((ContaInvestimento) conta).calculaNovoSaldo(0.20)) {
-			System.out.println("Rendimento aplicado, novo saldo é de = " + ((ContaInvestimento) conta).getSaldo());
+			System.out.println("Rendimento aplicado, novo saldo Ã© de = " + ((ContaInvestimento) conta).getSaldo());
 		} else {
-			System.out.println("Hoje não é dia de rendimento, saldo não atualizado.");
+			System.out.println("Hoje nÃ£o Ã© dia de rendimento, saldo nÃ£o atualizado.");
 		}
 		break;
 	case OURO:
 		if (((ContaInvestimento) conta).calculaNovoSaldo(0.40)) {
-			System.out.println("Rendimento aplicado, novo saldo é de = " + ((ContaInvestimento) conta).getSaldo());
+			System.out.println("Rendimento aplicado, novo saldo Ã© de = " + ((ContaInvestimento) conta).getSaldo());
 		} else {
-			System.out.println("Hoje não é dia de rendimento, saldo não atualizado.");
+			System.out.println("Hoje nÃ£o Ã© dia de rendimento, saldo nÃ£o atualizado.");
 		}
 		break;
 	default:
