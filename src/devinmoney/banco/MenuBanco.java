@@ -1,5 +1,5 @@
 // método adicionaSaldoPoupanca elaborado com base @author loiane <https://github.com/loiane/curso-java-basico/blob/master/eclipse/curso-java-basico/src/com/loiane/cursojava/aula43/labs/exer01/Teste.java>
-// método operacoesMenuPrincipal elaborado com base
+
 package devinmoney.banco;
 
 import java.time.LocalDate;
